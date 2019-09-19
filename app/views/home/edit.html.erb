@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset= “utf-8”>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+</head>
+<header>
+    <a href="/"><img src="/sitelogo.png" id="sitelogo"></a>
+    <ul class="menus">
+        <li class="l"><a href="/help">使い方</a></li>
+        <li class="l" id="edit"><a href="/edit">エディット</a></li>
+        <!--<li class="l"><a href="/save">コースロボット</a></li>
+        <li class="r" id="signup"><a href="#">新規登録</a></li>
+        <li class="r"><a href="#">ログイン</a></li>-->
+    </ul>
+</header>
+
+<body>
+<div class="edit">
+
+<div class="edit_table2">
+    <div class="items-list">
+        <div class="game_skin">
+        <div class="object_btns">
+            <div class="object_btn">
+                <%@bros_enemys.each do | bros_enemy |%>
+                    <button class="ob_btn"><%=bros_enemy%></button>
+                <%end%>
+                <%@bros_items.each do | bros_items |%>
+                    <button class="ob_btn"><%=bros_items%></button>
+                <%end%>
+                <%@bros_bosses.each do | boss |%>
+                    <button class="ob_btn"><%=boss%></button>
+                <%end%>
+                    <button class="ob_btn"><%=@bros_boomboom%></button>
+            </div>
+            <div class="object_btn">
+                <%@bros3_enemys.each do | bros3_enemy |%>
+                    <button class="ob_btn"><%=bros3_enemy%></button>
+                <%end%>
+                <%@bros3_items.each do | bros3_items |%>
+                    <button class="ob_btn"><%=bros3_items%></button>
+                <%end%>
+                <%@bros_bosses.each do | boss |%>
+                    <button class="ob_btn"><%=boss%></button>
+                <%end%>
+                <button class="ob_btn"><%=@bros_boomboom%></button>
+            </div>
+            <div class="object_btn">
+                <%@world_enemys.each do | world_enemy |%>
+                    <button class="ob_btn"><%=world_enemy%></button>
+                <%end%>
+                <%@world_items.each do | world_items |%>
+                    <button class="ob_btn"><%=world_items%></button>
+                <%end%>
+                <%@bros_bosses.each do | boss |%>
+                    <button class="ob_btn"><%=boss%></button>
+                <%end%>
+                <button class="ob_btn"><%=@bros_boomboom%></button>
+            </div>
+            <div class="object_btn">
+                <%@brosU_enemys.each do | brosU_enemy |%>
+                    <button class="ob_btn"><%=brosU_enemy%></button>
+                <%end%>
+                <%@brosU_items.each do | brosU_items |%>
+                    <button class="ob_btn"><%=brosU_items%></button>
+                <%end%>
+                <%@bros_bosses.each do | boss |%>
+                    <button class="ob_btn"><%=boss%></button>
+                <%end%>
+                <button class="ob_btn"><%=@bros_boomboom%></button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="piano">
+        <div class="window">
+            <div class="piano_box" style="max-width: 1060px; overflow:auto;">
+                <table class="piano_table">
+                    <%for i in 1..25 do%>
+                        <%measure = 0%> 
+                        <%if i != 11%>
+                            <tr>
+                                <%for num in 1..416 do%>
+                                    <%if num == 1 && i == 1 || num % 16 == 0%>
+                                        <%measure += 1%>
+                                        <%if num == 1%>
+                                            <td class="play<%= num%> r<%= i%>" id="measure<%= measure%>"></td>
+                                        <%else%>
+                                            <td class="play<%= num%> r<%= i%>" id="measure<%= measure%>" style="border-right: 4px solid;"></td>
+                                        <%end%>
+                                    <%elsif num % 4 != 0%>
+                                        <td class="play<%= num%> r<%= i%>"></td>
+                                    <%else%>
+                                        <td class="play<%= num%> r<%= i%>" style="border-right: 3px solid;"></td>
+                                    <%end%>
+                                <%end%>
+                            </tr>
+                        <%else%>
+                            <tr style="border-bottom: 4px solid">
+                                <%for num in 1..416 do%>
+                                    <%if num % 16 == 0%>
+                                        <td class="play<%= num%> r<%= i%>" style="border-right: 4px solid;"></td>
+                                    <%elsif num % 4 != 0%>
+                                        <td class="play<%= num%> r<%= i%>"></td>
+                                    <%else%>
+                                        <td class="play<%= num%> r<%= i%>" style="border-right: 3px solid;"></td>
+                                    <%end%>
+                                <%end%>
+                            </tr>
+                        <%end%>
+                    <%end%>
+                </table>
+            </div>
+            <img src="/piano_image.png" id="piano">
+        </div>
+            <div class="edit_table1 sidebar">
+                <span class="measures"><h3>小節</h3></span>
+                <table>
+                    <tr>
+                        <td class="surface">1</td>
+                        <td id="ameasure1">1</td>
+                        <td id="ameasure2">2</td>
+                        <td id="ameasure3">3</td>
+                        <td id="ameasure4">4</td>
+                        <td id="ameasure5">5</td>
+                        <td id="ameasure6">6</td>
+                        <td id="ameasure7">7</td>
+                        <td id="ameasure8">8</td>
+                        <td id="ameasure9">9</td>
+                        <td id="ameasure10">10</td>
+                        <td id="ameasure11">11</td>
+                        <td id="ameasure12">12</td>
+                        <td id="ameasure13">13</td>
+                    </tr>
+                    <tr>
+                        <td class="surface">2</td>
+                        <td id="ameasure14">1</td>
+                        <td id="ameasure15">2</td>
+                        <td id="ameasure16">3</td>
+                        <td id="ameasure17">4</td>
+                        <td id="ameasure18">5</td>
+                        <td id="ameasure19">6</td>
+                        <td id="ameasure20">7</td>
+                        <td id="ameasure21">8</td>
+                        <td id="ameasure22">9</td>
+                        <td id="ameasure23">10</td>
+                        <td id="ameasure24">11</td>
+                        <td id="ameasure25">12</td>
+                        <td id="ameasure26">13</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="opsions sidebar">
+                <h3>変換前BPM</h3>
+                <input type="number" id="bpm" placeholder="原曲のBPMを入力">
+                <button class="trans">変換</button>
+                <h3>BPM</h3>
+                <input type="text" id="afterbpm">
+                <h3>移動手段</h3>
+                <input type="text" id="transportation">
+                <br>
+                <h3>ゲームスキン</h3>
+                <div class="gameskin"><button class="bros buttons2">スーパーマリオブラザーズ</button></div>
+                <div class="gameskin"><button class="bros3 buttons2">スーパーマリオブラザーズ3</button></div>
+                <div class="gameskin"><button class="world buttons2">スーパーマリオワールド</button></div>
+                <div class="gameskin"><button class="brosU buttons2">New スーパーマリオブラザーズ U</button></div>
+                <button class="erase buttons1">消す</button>
+                <button class="allerase buttons1">全消し</button>
+                <button id="playback" class="buttons1">再生</button>
+            </div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
