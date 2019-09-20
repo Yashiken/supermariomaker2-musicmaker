@@ -581,9 +581,13 @@ $(document).ready(function () {
             $("td", $(this).parent().prevAll().eq(1)).eq($(this).index()).css("background-color", "pink");
             */
             let text= $(this).text();
+            if(text == "ピアノ"){
+                $(this).css("background-color","brown")
+            }
             musical_scal(row,text);
         } else {
             $(this).text("");
+            $(this).css("background-color","");
             $(this).removeClass(removeclass(col, row));
         }
     });
@@ -609,10 +613,8 @@ $(document).ready(function () {
         $(this).addClass("selecting2");
         select_ob = $(this).text();
     });
-    $(".ob_btn").hover(function () {
-        let obtext = $(this).text();
-        console.log(obtext);
-    });
+    let hoverob = "";
+    
     //選択中のボタン
     $("button.buttons1").click(function () {
         $("button.buttons1").removeClass("border");

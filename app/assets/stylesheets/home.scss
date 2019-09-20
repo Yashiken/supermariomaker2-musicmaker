@@ -64,7 +64,6 @@ header li {
     padding-bottom: 20px;
     border-bottom: 4px solid;
 }
-
 .items-list {
     display: none;
     z-index: 100;
@@ -103,7 +102,6 @@ header li {
 }
 .edit_table1 table {
     border-collapse: collapse;
-    background-color: white;
     border: 2px solid;
 }
 
@@ -133,7 +131,6 @@ header li {
     height: 50px;
     width: 50px;
     min-width: 50px;
-    background-color: white;
 }
 
 #piano {
@@ -183,7 +180,6 @@ header li {
 .object_btn {
     display: none;
 }
-
 .selecting {
     display: inline-block;
     background-color: red;
@@ -227,4 +223,8 @@ button.buttons2:hover {
 }
 .page_none{
     display: none;
+}
+
+.help{
+    margin-left: 15%;
 }
