@@ -197,20 +197,20 @@ button.buttons1 {
     background-color: lightblue;
     height: 70px;
     width: 70px;
-    font-size: 15px;
+    font-size: 1em;
+    margin-left: 28px;
 }
-.buttons1{
-    margin-top: 130px;
-}
+
 button.buttons1:hover {
     background-color: blue;
 }
 
 button.buttons2 {
     background-color: orange;
-    height: 100px;
-    width: 100px;
-    font-size: 15px;
+    height: 70px;
+    width: 70px;
+    font-size: 0.7em;
+    margin: 2px;
 }
 
 button.buttons2:hover {
