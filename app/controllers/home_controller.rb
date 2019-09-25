@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
     def top
     end
-    def top
+    def help
     end
     def edit
         

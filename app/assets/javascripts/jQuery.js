@@ -570,7 +570,7 @@ $(document).ready(function () {
         row += 1;
         let col = this.cellIndex;
         col += 1;
-        console.log("Row:" + row + "Col:" + col);
+        //console.log("Row:" + row + "Col:" + col);
         if (select_ob != "" && draw == 1) {
             if($(this).text() == ""){
                 $(this).addClass(addclass(col));
@@ -581,9 +581,6 @@ $(document).ready(function () {
             $("td", $(this).parent().prevAll().eq(1)).eq($(this).index()).css("background-color", "pink");
             */
             let text= $(this).text();
-            if(text == "ピアノ"){
-                $(this).css("background-color","brown")
-            }
             musical_scal(row,text);
         } else {
             $(this).text("");
