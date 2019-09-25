@@ -609,6 +609,13 @@ $(document).ready(function () {
         $(".selecting2").removeClass("selecting2");
         $(this).addClass("selecting2");
         select_ob = $(this).text();
+        $("#select_p").text(select_ob);
+        for (let num = 0; num <= 48; num++) {
+            if (select_ob == instruments[num].name) {
+                $("#select_m").text(instruments[num].instrument);
+            }
+        }
+        
     });
     let hoverob = "";
     
