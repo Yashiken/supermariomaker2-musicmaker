@@ -93,9 +93,8 @@ header li {
     color: white;
     border-color: black;
 }
-.measures h2{
-    margin: 0 5%;
-    padding-bottom: 20px;
+.measures {
+    margin-left: 1070px;
 }
 .edit_table1{
     margin-top: 200px;
@@ -154,7 +153,7 @@ header li {
 .opsions {
     position: absolute;
     z-index: 300;
-    left: 1070px;
+    right: 0px;
     top: 0%;
 }
 .tools {
