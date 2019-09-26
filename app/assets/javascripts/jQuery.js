@@ -575,9 +575,9 @@ $(document).ready(function () {
             if($(this).text() == ""){
                 $(this).addClass(addclass(col));
             }
-            $(this).text(instruments_check());
+            $(this).text(instruments_check() + "♪");
+            $("td", $(this).parent().prevAll().eq(0)).eq($(this).index()).text(select_ob + "+雲");
             /*
-            $("td", $(this).parent().prevAll().eq(0)).eq($(this).index()).css("background-color", "pink");
             $("td", $(this).parent().prevAll().eq(1)).eq($(this).index()).css("background-color", "pink");
             */
             let text= $(this).text();
