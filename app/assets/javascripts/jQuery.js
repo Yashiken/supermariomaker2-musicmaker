@@ -289,6 +289,7 @@ $(document).ready(function () {
     let select_ob = "";
     let text = "";
     let chord = 1;
+    let scll = 0;
     let measures = [
         $("#measure1").offset().left - 200,
         $("#measure2").offset().left - 105,
@@ -410,60 +411,12 @@ $(document).ready(function () {
     //左から順番に再生
     function playback() {
         note_check();
-        /*
-        if ($(".play1").hasClass("play")) {
-            let row = $(".play").closest("tr").index();
-            row += 1;
-            let text = $(".play").text();
-            let row2 = $(".play__1").closest("tr").index();
-            row2 += 1;
-            let text2 = $(".play__1").text();
-            let row3 = $(".play___1").closest("tr").index();
-            row3 += 1;
-            let text3 = $(".play___1").text();
-            let row4 = $(".play____1").closest("tr").index();
-            row4 += 1;
-            let text4 = $(".play____1").text();
-            setTimeout(play_back, 0, row, text);
-            if($(".play1").hasClass("play__1")){
-                setTimeout(play_back, 0, row2, text2);
-            }
-            if($(".play1").hasClass(".play___1")){
-                setTimeout(play_back, 0, row3, text3);
-            }
-            if($(".play1").hasClass(".play____1")){
-                setTimeout(play_back, 0, row4, text4);
-            }
-        }else {
-            setTimeout(diray, 0);
-        }
-        */
         for(let i= 1; i <= 416; i++){
             if ($(".play" + i).hasClass("play_" + i) || $(".play" + i).hasClass("play__" + i) || $(".play" + i).hasClass("play___" + i) || $(".play" + i).hasClass("play____" + i)) {
                 playchord(i);
             } else {
                 setTimeout(diray, note * (i-1));
             }
-            /*if ($(".play3").hasClass("play_3")) {
-                let row = $(".play_3").closest("tr").index();
-                row += 1;
-                let row2 = $(".play__3").closest("tr").index();
-                row2 += 1;
-                let row3 = $(".play___3").closest("tr").index();
-                row3 += 1;
-                let row4 = $(".play____3").closest("tr").index();
-                row4 += 1;
-                setTimeout(play_back, note * 2, row);
-                if($(".play3").hasClass("play__3")){
-                    setTimeout(play_back, note * 2, row2);
-                }
-                if($(".play3").hasClass(".play___3")){
-                    setTimeout(play_back, note * 2, row3);
-                }
-                if($(".play3").hasClass(".play____3")){
-                    setTimeout(play_back, note * 2, row4);
-                }
-            */
         }
     }
     //再生するためのクラスを付与
@@ -559,10 +512,12 @@ $(document).ready(function () {
     });
     //小節表クリック
     $(".edit_table1 td").click(function() {
+        /*
         $(".edit_table1 td").css("border","2px solid");
         $(".edit_table1 td").css("border-color","black");
         $(this).css("border","4px solid");
         $(this).css("border-color","red");
+        */
     });
     //マス目クリック
     $(".piano_table td").click(function () {
@@ -576,7 +531,7 @@ $(document).ready(function () {
                 $(this).addClass(addclass(col));
             }
             $(this).text(instruments_check());
-            $("td", $(this).parent().prevAll().eq(0)).eq($(this).index()).text(select_ob);
+            $("td", $(this).parent().prevAll().eq(0)).eq($(this).index()).text(select_ob + "+雲");
             /*
             $("td", $(this).parent().prevAll().eq(1)).eq($(this).index()).css("background-color", "pink");
             */
@@ -618,7 +573,6 @@ $(document).ready(function () {
         
     });
     let hoverob = "";
-    
     //選択中のボタン
     $("button.buttons1").click(function () {
         $("button.buttons1").removeClass("border");
@@ -642,6 +596,22 @@ $(document).ready(function () {
             });
         });
     }
+    $(".piano_box").on("scroll",function(){
+        scll = $(".piano_box").scrollLeft();
+        scll += 1;
+        for(let i=1; i<=26; i++){
+            if(scll < measures[i] && scll > measures[i - 1]){
+                $("#ameasure" + i).css("border","4px solid");
+                $("#ameasure" + i).css("border-color","red");
+            }
+            if(scll < measures[i - 1] || scll > measures[i]){
+                $("#ameasure" + i).css("border","2px solid");
+                $("#ameasure" + i).css("border-color","black");
+            }
+        }
+    });
+    $("#ameasure1").css("border","4px solid");
+    $("#ameasure1").css("border-color","red");
     //スクロール追従
     $(window).on("scroll",function(){
         if($(this).scrollTop() > 180){
