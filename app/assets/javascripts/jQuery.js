@@ -539,6 +539,7 @@ $(document).ready(function () {
             musical_scal(row,text);
         } else {
             $(this).text("");
+            $("td", $(this).parent().prevAll().eq(0)).eq($(this).index()).text("");
             $(this).css("background-color","");
             $(this).removeClass(removeclass(col, row));
         }
