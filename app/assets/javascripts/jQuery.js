@@ -568,7 +568,7 @@ $(document).ready(function () {
         $("#select_p").text(select_ob);
         for (let num = 0; num <= 48; num++) {
             if (select_ob == instruments[num].name) {
-                $("#select_m").text(instruments[num].instrument);
+                $("#select_m").text("(" + instruments[num].instrument + ")");
             }
         }
         
