@@ -101,8 +101,8 @@ header li {
 
 .edit_table1 td {
     text-align: center;
-    height: 0.3em;
-    width: 1.3em;
+    height: 1em;
+    width: 20px;
     min-width: 2%;
     border: 2px solid;
 }
@@ -158,8 +158,8 @@ header li {
 }
 
 .opsions input {
-    width: 26em;
-    height: 1.8em;
+    width: 250px;
+    height: 20px;
 }
 
 .gameskin {
@@ -190,10 +190,10 @@ header li {
 button.buttons1 {
     background-color: lightblue;
     height: 4.5em;
-    width: 4.5em;
+    width: 70px;
     font-size: 1em;
     margin-top: 20px;
-    margin-left: 31px;
+    margin-left: 28px;
 }
 
 button.buttons1:hover {
@@ -202,9 +202,10 @@ button.buttons1:hover {
 
 button.buttons2 {
     background-color: orange;
-    height: 7em;
-    width: 7em;
+    height: 6.5em;
+    width: 70px;
     font-size: 0.7em;
+    margin: 2px;
 }
 
 button.buttons2:hover {
