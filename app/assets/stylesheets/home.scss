@@ -22,7 +22,6 @@ header li {
     list-style: none;
 }
 
-
 .menus a {
     text-decoration: none;
     color: black;
@@ -102,8 +101,8 @@ header li {
 
 .edit_table1 td {
     text-align: center;
-    height: 30px;
-    width: 20px;
+    height: 0.3em;
+    width: 1.3em;
     min-width: 2%;
     border: 2px solid;
 }
@@ -159,8 +158,8 @@ header li {
 }
 
 .opsions input {
-    width: 250px;
-    height: 20px;
+    width: 26em;
+    height: 1.8em;
 }
 
 .gameskin {
@@ -190,11 +189,11 @@ header li {
 
 button.buttons1 {
     background-color: lightblue;
-    height: 70px;
-    width: 70px;
+    height: 4.5em;
+    width: 4.5em;
     font-size: 1em;
     margin-top: 20px;
-    margin-left: 28px;
+    margin-left: 31px;
 }
 
 button.buttons1:hover {
@@ -203,10 +202,9 @@ button.buttons1:hover {
 
 button.buttons2 {
     background-color: orange;
-    height: 70px;
-    width: 70px;
+    height: 7em;
+    width: 7em;
     font-size: 0.7em;
-    margin: 2px;
 }
 
 button.buttons2:hover {
