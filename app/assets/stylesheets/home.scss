@@ -86,18 +86,17 @@ header li {
 .edit_table1 {
     z-index: 5;
     padding: 90px 0;
-    margin-right: 0.5em;
+    margin-top: 220px;
 }
 .surface {
     background-color: black;
     color: white;
 }
-.edit_table1{
-    margin-top: 220px;
-}
+
 .edit_table1 table {
     border-collapse: collapse;
     border: 2px solid;
+    width: 100%;
 }
 
 .edit_table1 td {
