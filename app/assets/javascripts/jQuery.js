@@ -402,6 +402,9 @@ $(document).ready(function () {
         let row4 = $(".play____" + num).closest("tr").index();
         row4 += 1;
         let text4 = $(".play____" + num).text();
+        if(num == 2){
+            num * 1.25
+        } 
         setTimeout(play_back, note * (num - 1), row, text);
         setTimeout(play_back, note * (num - 1), row2, text2);
         setTimeout(play_back, note * (num - 1), row3, text3);
@@ -421,20 +424,6 @@ $(document).ready(function () {
     }
     //再生するためのクラスを付与
     function addclass(col) {
-        /*
-        (1と2の間がおかしいので一応)
-        if (col == 1) {
-            if (!$(".play1").hasClass("play")){
-                return "play"
-            }else if (!$(".play1").hasClass("play__1")){
-                return "play__1"
-            }else if (!$(".play1").hasClass("play___1")){
-                return "play___1"
-            }else if (!$(".play1").hasClass("play____1")){
-                return "play____1"
-            }
-        }
-        */
         for(let i = 1; i<= 416; i++){
             if (col == i) {
                 if (!$(".play" + i).hasClass("play_" + i)){
