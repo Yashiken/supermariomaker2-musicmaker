@@ -84,9 +84,9 @@ header li {
 }
 
 .edit_table1 {
-    z-index: 1;
+    z-index: 5;
     padding: 90px 0;
-    margin-top: 60%;
+    margin-top: 50%;
 }
 .surface {
     background-color: black;
@@ -121,13 +121,14 @@ header li {
     border: 2px solid;
     border-color: dimgrey;
     height: 5em;
-    min-width: 3.4vw;
+    width: 5ezm;
+    min-width: 5em;
 }
 
 #piano {
     position: absolute;
     top: 0%;
-    height: 84.75em;
+    height: 1356px;
     left: 2.5%;
     background-color: white;
 }
@@ -139,12 +140,12 @@ header li {
 
 .edit_table1 {
     position: absolute;
-    top: 17.5vw;
+    top: 20vw;
     right: 2%;
 }
 .opsions {
     position: absolute;
-    z-index: 3;
+    z-index: 300;
     right: 3%;
     top: 0%;
 }
@@ -156,7 +157,7 @@ header li {
 
 .opsions input {
     width: 15vw;
-    height: 1vw;
+    height: 1.6vw;
 }
 
 .gameskin {
@@ -189,8 +190,7 @@ button.buttons1 {
     height: 8vh;
     width: 5vw;
     font-size: 1em;
-    margin-top: 0.5vh;
-    margin-left: 1.7vw;
+    margin-left: 28px;
 }
 
 button.buttons1:hover {
@@ -199,7 +199,7 @@ button.buttons1:hover {
 
 button.buttons2 {
     background-color: orange;
-    height: 9vh;
+    height: 10vh;
     width: 5vw;
     font-size: 0.7em;
 }
@@ -220,10 +220,10 @@ button.buttons2:hover {
     margin-left: 15%;
 }
 .piano_box{
-    max-width: 70vw;
+    max-width: 64em;
 }
 #select_p, #select_m{
-
+    float: left;
 }
 .sidebar h3{
     font-size: 1.25vw;
