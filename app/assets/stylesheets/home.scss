@@ -86,7 +86,9 @@ header li {
 .edit_table1 {
     z-index: 5;
     padding: 90px 0;
-    margin-top: 50%;
+    position: absolute;
+    top: 26vw;
+    right: 2%;
 }
 .surface {
     background-color: black;
@@ -138,11 +140,6 @@ header li {
     margin-top: 2%;
 }
 
-.edit_table1 {
-    position: absolute;
-    top: 17vw;
-    right: 2%;
-}
 .opsions {
     position: absolute;
     z-index: 300;
