@@ -22,7 +22,6 @@ header li {
     list-style: none;
 }
 
-
 .menus a {
     text-decoration: none;
     color: black;
@@ -102,8 +101,8 @@ header li {
 
 .edit_table1 td {
     text-align: center;
-    height: 30px;
-    width: 20px;
+    height: 2vw;
+    width: 1.4vw;
     min-width: 2%;
     border: 2px solid;
 }
@@ -159,8 +158,8 @@ header li {
 }
 
 .opsions input {
-    width: 250px;
-    height: 20px;
+    width: 15vw;
+    height: 1.6vw;
 }
 
 .gameskin {
@@ -190,8 +189,8 @@ header li {
 
 button.buttons1 {
     background-color: lightblue;
-    height: 70px;
-    width: 70px;
+    height: 5vw;
+    width: 5vw;
     font-size: 1em;
     margin-top: 20px;
     margin-left: 28px;
@@ -203,8 +202,8 @@ button.buttons1:hover {
 
 button.buttons2 {
     background-color: orange;
-    height: 70px;
-    width: 70px;
+    height: 5vw;
+    width: 5vw;
     font-size: 0.7em;
     margin: 2px;
 }
@@ -225,5 +224,11 @@ button.buttons2:hover {
     margin-left: 15%;
 }
 .piano_box{
-    max-width: 72%;
+    max-width: 71.5vw;
+}
+#select_p, #select_m{
+
+}
+.sidebar h3{
+    font-size: 1.25vw;
 }
