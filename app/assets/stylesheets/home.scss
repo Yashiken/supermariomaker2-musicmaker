@@ -86,23 +86,23 @@ header li {
 .edit_table1 {
     z-index: 5;
     padding: 90px 0;
-    margin-top: 220px;
 }
 .surface {
     background-color: black;
     color: white;
 }
-
+.edit_table1{
+    margin-top: 200px;
+}
 .edit_table1 table {
     border-collapse: collapse;
     border: 2px solid;
-    width: 22em;
 }
 
 .edit_table1 td {
     text-align: center;
-    height: 2em;
-    width: 1.2em;
+    height: 30px;
+    width: 20px;
     min-width: 2%;
     border: 2px solid;
 }
@@ -158,8 +158,8 @@ header li {
 }
 
 .opsions input {
-    width: 25em;
-    height: 2em;
+    width: 250px;
+    height: 20px;
 }
 
 .gameskin {
