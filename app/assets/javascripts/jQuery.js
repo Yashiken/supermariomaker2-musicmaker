@@ -402,9 +402,7 @@ $(document).ready(function () {
         let row4 = $(".play____" + num).closest("tr").index();
         row4 += 1;
         let text4 = $(".play____" + num).text();
-        if(num == 2){
-            num * 1.25
-        } 
+        num += 1;
         setTimeout(play_back, note * (num - 1), row, text);
         setTimeout(play_back, note * (num - 1), row2, text2);
         setTimeout(play_back, note * (num - 1), row3, text3);
