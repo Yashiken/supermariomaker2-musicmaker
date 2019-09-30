@@ -111,7 +111,7 @@ header li {
 }
 
 .piano_table {
-    margin-left: 15%;
+    margin-left: 10vw;
     border-collapse: collapse;
     border: 3px solid;
     border-left: 1px solid;
@@ -122,15 +122,15 @@ header li {
     font-size: 0.2em;
     border: 2px solid;
     border-color: dimgrey;
-    height: 5em;
-    width: 5ezm;
-    min-width: 5em;
+    height: 3.5vw;
+    width: 3.5vw;
+    min-width: 3.5vw;
 }
 
 #piano {
     position: absolute;
     top: 0%;
-    height: 1356px;
+    height: 94.15vw;
     left: 2.5%;
     background-color: white;
 }
@@ -217,7 +217,7 @@ button.buttons2:hover {
     margin-left: 15%;
 }
 .piano_box{
-    max-width: 64em;
+    max-width: 72.5vw;
 }
 #select_p span, #select_m span{
     float: left;
