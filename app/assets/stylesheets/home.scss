@@ -69,12 +69,11 @@ header li {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 71.7vw;
+    width: 64.5em;
     background-color: rgba(255, 255, 255, 0.8);
     border-top: 2px solid;
     border-color: lightgray;
 }
-
 .items-list li {
     float: left;
 }
@@ -179,7 +178,8 @@ header li {
 }
 
 .selecting2 {
-    background-color: red;
+    background-color: saddlebrown;
+    color: white;
 }
 
 button.buttons1 {
@@ -214,7 +214,8 @@ button.buttons2:hover {
 }
 
 .help{
-    margin-left: 15%;
+    margin-left: 10%;
+    width: 70vw;
 }
 .piano_box{
     max-width: 64em;

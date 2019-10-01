@@ -323,7 +323,19 @@ $(document).ready(function () {
     ];
     let folders = [
         "/ピアノ","/アコーディオン1","/アコーディオン2","/ウィンドチャイム","/エレキベース","/オーケストラヒット","/オーバードライブギター","/ハーモニカ","/オルガン","/オルゴール","/ガムラン","/クラッシュシンバル","/クローズハイハット","/サックス","/サントゥール","/シンセパッド","/シンセベース","/スネアドラム","/ズルナ","/タンバリン","/ディストーションギター","/ティンパレス","/トランペット","/ハープシーコード","/パイプオルガン","/バスドラム","/ピチカートストリングス","/ファミコン音","/フルート","/ホルン","/ホンキートンク","/リコーダー","/三味線","/鐘","/鉄琴","/電子ピアノ1","/電子ピアノ2","/木魚","/木琴","/和太鼓"
-    ]
+    ];
+    let enemy_and_devices = [
+        "コイン(パラシュート)","10コイン(パラシュート)","ヨッシー","くつクリボー","クイーンくつクリボー","クリボー","クリボン","カキボー","カキボン","ノコノコ(緑)","ノコノコ(赤)","メット","トゲメット","トゲゾー","パックンフラワー","ピーパックン","ファイアパックン","ブラックパックン","ドッスン","チョロプー","ハンマーブロス","メガブロス","ワンワン","杭なしワンワン","ハナちゃん","ボムへい","カロン","カメック","クッパクラウン","キラー砲台","砲台","Pスイッチ","POWブロック","ジャンプ台(縦)","ジャンプ台(横)"
+    ];
+    let enemy_and_device = 100;
+    let items = [
+        "スーパーキノコ","ファイアフラワー","でかキノコ","スーパーボールフラワー","スーパースター","1UPキノコ","くさったキノコ"
+    ];
+    let item = 100;
+    let bosses = ["クッパ","クッパJr."];
+    let boss = 3;
+    let boombooms = "ブンブン";
+    let boomboom = 5;
     //楽器とパーツの表示切り替え
     let ob_name = 0;
     //ページ切り替え
@@ -464,6 +476,27 @@ $(document).ready(function () {
             }
         }
     }
+    //残り設置可能数を計算
+    function number_of(text){
+        for(let i = 0; i < items.length ; i++){
+            if(text == items[i]){
+                return item;
+            }
+        }
+        for(let i = 0; i < enemy_and_devices.length ; i++){
+            if(text == enemy_and_devices[i]){
+                return enemy_and_device;
+            }
+        }
+        for(let i = 0; i < bosses.length ; i++){
+            if(text == bosses[i]){
+                return boss;
+            }
+        }
+        if(text == boombooms){
+            return boomboom;
+        }
+    }
     //消しボタン
     $(".erase").click(function () {
         erase = 1;
@@ -553,7 +586,7 @@ $(document).ready(function () {
         $(".selecting2").removeClass("selecting2");
         $(this).addClass("selecting2");
         select_ob = $(this).text();
-        $("#select_p").text(select_ob);
+        $("#select_p").text(select_ob);// + "(残り設置可能数:" + number_of(select_ob) + ")");
         for (let num = 0; num <= 48; num++) {
             if (select_ob == instruments[num].name) {
                 $("#select_m").text(instruments[num].instrument);
