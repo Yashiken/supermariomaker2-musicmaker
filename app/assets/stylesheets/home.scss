@@ -48,13 +48,10 @@ header li {
 
 .main {
     background-color: #facd00;
-    height: 56vh;
-}
-
-.main {
+    height: 64.5vh;
     font-size: 45px;
     text-align: center;
-    padding: 5% 0;
+    padding: 2% 0;
 }
 
 #edit,
@@ -160,6 +157,7 @@ header li {
     list-style: none;
     padding: 5px;
     float: left;
+    font-size: 0.8em;
 }
 .sidebar.fixed{
     position: fixed;
@@ -177,11 +175,16 @@ header li {
     display: block;
 }
 
-.selecting2 {
+button.selecting2 {
     background-color: saddlebrown;
     color: white;
 }
-
+.ob_btn{
+    background-color: rgb(250,212,3);
+}
+.ob_btn:hover {
+    color: white;
+}
 button.buttons1 {
     background-color: lightblue;
     height: 8vh;
@@ -198,7 +201,6 @@ button.buttons2 {
     background-color: orange;
     height: 9vh;
     width: 5vw;
-    font-size: 0.7em;
 }
 
 button.buttons2:hover {

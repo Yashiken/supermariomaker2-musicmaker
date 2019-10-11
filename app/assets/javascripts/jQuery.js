@@ -5,37 +5,10 @@ $(document).ready(function () {
     let cbpm = 0;
     let scl = 0;
     let bpms = [28, 56, 85, 112, 140, 168, 196, 224, 250, 280, 310, 360];
-    let originalbpm = [42,70,98,126,154,182,208,237,265,295,335];
+    let bpms_note = [500, 250, 164.705882, 125, 100, 83.3333333, 71.4285714, 62.5, 56, 50, 45.1612903, 38.8888889];
+    let originalbpm = [42, 70, 98, 126, 154, 182, 208, 237, 265, 295, 335];
     let objects = [
         "亀スクロール", "兎スクロール", "歩き", "虎スクロール", "こうそく溶岩リフト", "走り", "歩き(青コンベア順走)", "走り(赤コンベア順走)", "赤砲台 + メットこうら", "走り(青コンベア順走)", "赤砲台 + メットこうら(赤コンベア順走)", "赤砲台 + メット(青コンベア順走)"
-    ];
-
-    let bros_enemys = [
-        "コイン(パラシュート)", "10コイン(パラシュート)", "くつクリボー", "クイーンくつクリボー", "クリボー", "カキボー", "ノコノコ(緑)", "ノコノコ(赤)", "メット", "トゲメット", "トゲゾー", "パックンフラワー", "ファイアパックン", "ブラックパックン", "ドッスン", "チョロプー", "ハンマーブロス", "メガブロス", "ワンワン", "杭なしワンワン", "ハナチャン", "ボムへい", "カロン", "カメック", "クッパクラウン", "キラー砲台", "砲台", "Pスイッチ", "POWブロック", "ジャンプ台(縦)", "ジャンプ台(横)", "トゲこんぼう"
-    ];
-    let bros_items = [
-        "スーパーキノコ", "ファイアフラワー", "でかキノコ", "スーパーボールフラワー", "スーパースター", "1UPキノコ", "くさったキノコ"
-    ];
-    let bros_icicles = "ツララ";
-    let bros_bosses = ["クッパ", "クッパJr."]
-    let bros_boomboom = "ブンブン";
-    let bors3_enemy = [
-        "コイン(パラシュート)", "10コイン(パラシュート)", "くつクリボー", "クイーンくつクリボー", "クリボー", "カキボー", "ノコノコ(緑)", "ノコノコ(赤)", "メット", "トゲメット", "トゲゾー", "パックンフラワー", "ファイアパックン", "ブラックパックン", "ドッスン", "チョロプー", "ハンマーブロス", "メガブロス", "ワンワン", "杭なしワンワン", "ハナチャン", "ボムへい", "カロン", "カメック", "クッパクラウン", "キラー砲台", "砲台", "Pスイッチ", "POWブロック", "ジャンプ台(縦)", "ジャンプ台(横)", "トゲこんぼう"
-    ];
-    let bros3_items = [
-        "スーパーキノコ", "ファイアフラワー", "スーパースター", "1UPキノコ"
-    ];
-    let world_enemy = [
-        "コイン(パラシュート)", "10コイン(パラシュート)", "ヨッシー", "クリボン", "カキボン", "ノコノコ(緑)", "ハダカガメ(緑)", "ノコノコ(赤)", "ハダカガメ(赤)", "メット", "トゲメット", "トゲゾー", "ピーパックン", "ファイアパックン", "ブラックパックン", "ドッスン", "チョロプー", "ハンマーブロス", "メガブロス", "ワンワン", "杭なしワンワン", "ハナチャン", "ボムへい", "カロン", "カメック", "クッパクラウン", "キラー砲台", "砲台", "Pスイッチ", "POWブロック", "ジャンプ台(縦)", "ジャンプ台(横)", "トゲこんぼう"
-    ];
-    let world_items = [
-        "スーパーキノコ", "ファイアフラワー", "スーパースター", "1UPキノコ"
-    ];
-    let brosU_enemy = [
-        "コイン(パラシュート)", "10コイン(パラシュート)", "ヨッシー", "クリボー", "カキボー", "ノコノコ(緑)", "ノコノコ(赤)", "メット", "トゲメット", "トゲゾー", "パックンフラワー", "ファイアパックン", "ブラックパックン", "ドッスン", "チョロプー", "ハンマーブロス", "メガブロス", "ワンワン", "杭なしワンワン", "ハナチャン", "ボムへい", "カロン", "カメック", "クッパクラウン", "キラー砲台", "砲台", "Pスイッチ", "POWブロック", "ジャンプ台(縦)", "ジャンプ台(横)", "トゲこんぼう"
-    ];
-    let brosU_items = [
-        "スーパーキノコ", "ファイアフラワー", "スーパースター", "1UPキノコ", "くさったキノコ"
     ];
     let instruments = [
         {
@@ -62,7 +35,7 @@ $(document).ready(function () {
             name: "ヨッシー",
             instrument: "ズルナ"
             ///
-            
+
         },
         {
             name: "クリボー",
@@ -304,11 +277,11 @@ $(document).ready(function () {
         $("#measure11").offset().left - 105,
         $("#measure12").offset().left - 105,
         $("#measure13").offset().left - 105,
-        $("#measure14").offset().left - 105,//裏面
+        $("#measure14").offset().left - 105, //裏面
         $("#measure15").offset().left - 105,
         $("#measure16").offset().left - 105,
         $("#measure17").offset().left - 105,
-        $("#measure18").offset().left - 105, 
+        $("#measure18").offset().left - 105,
         $("#measure19").offset().left - 105,
         $("#measure20").offset().left - 105,
         $("#measure21").offset().left - 105,
@@ -319,45 +292,32 @@ $(document).ready(function () {
         $("#measure26").offset().left - 105
     ];
     let sorces = [
-        "/h-do.wav","/h-shi.wav","/h-lasha.wav","/h-la.wav","/h-sosha.wav","/h-so.wav","/h-fasha.wav","/h-fa.wav","/h-mi.wav","/h-lesha.wav","/h-le.wav","/h-dosha.wav","/l-do.wav","/l-shi.wav","/l-lasha.wav","/l-la.wav","/l-sosha.wav","/l-so.wav","/l-fasha.wav","/l-fa.wav","/l-mi.wav","/l-lesha.wav","/l-le.wav","/le-dosha.wav","/l-do2.wav"
+        "/h-do.wav", "/h-shi.wav", "/h-lasha.wav", "/h-la.wav", "/h-sosha.wav", "/h-so.wav", "/h-fasha.wav", "/h-fa.wav", "/h-mi.wav", "/h-lesha.wav", "/h-le.wav", "/h-dosha.wav", "/l-do.wav", "/l-shi.wav", "/l-lasha.wav", "/l-la.wav", "/l-sosha.wav", "/l-so.wav", "/l-fasha.wav", "/l-fa.wav", "/l-mi.wav", "/l-lesha.wav", "/l-le.wav", "/le-dosha.wav", "/l-do2.wav"
     ];
     let folders = [
-        "/ピアノ","/アコーディオン1","/アコーディオン2","/ウィンドチャイム","/エレキベース","/オーケストラヒット","/オーバードライブギター","/ハーモニカ","/オルガン","/オルゴール","/ガムラン","/クラッシュシンバル","/クローズハイハット","/サックス","/サントゥール","/シンセパッド","/シンセベース","/スネアドラム","/ズルナ","/タンバリン","/ディストーションギター","/ティンパレス","/トランペット","/ハープシーコード","/パイプオルガン","/バスドラム","/ピチカートストリングス","/ファミコン音","/フルート","/ホルン","/ホンキートンク","/リコーダー","/三味線","/鐘","/鉄琴","/電子ピアノ1","/電子ピアノ2","/木魚","/木琴","/和太鼓"
+        "/ピアノ", "/アコーディオン1", "/アコーディオン2", "/ウィンドチャイム", "/エレキベース", "/オーケストラヒット", "/オーバードライブギター", "/ハーモニカ", "/オルガン", "/オルゴール", "/ガムラン", "/クラッシュシンバル", "/クローズハイハット", "/サックス", "/サントゥール", "/シンセパッド", "/シンセベース", "/スネアドラム", "/ズルナ", "/タンバリン", "/ディストーションギター", "/ティンパレス", "/トランペット", "/ハープシーコード", "/パイプオルガン", "/バスドラム", "/ピチカートストリングス", "/ファミコン音", "/フルート", "/ホルン", "/ホンキートンク", "/リコーダー", "/三味線", "/鐘", "/鉄琴", "/電子ピアノ1", "/電子ピアノ2", "/木魚", "/木琴", "/和太鼓"
     ];
-    let enemy_and_devices = [
-        "コイン(パラシュート)","10コイン(パラシュート)","ヨッシー","くつクリボー","クイーンくつクリボー","クリボー","クリボン","カキボー","カキボン","ノコノコ(緑)","ノコノコ(赤)","メット","トゲメット","トゲゾー","パックンフラワー","ピーパックン","ファイアパックン","ブラックパックン","ドッスン","チョロプー","ハンマーブロス","メガブロス","ワンワン","杭なしワンワン","ハナちゃん","ボムへい","カロン","カメック","クッパクラウン","キラー砲台","砲台","Pスイッチ","POWブロック","ジャンプ台(縦)","ジャンプ台(横)"
-    ];
-    let enemy_and_device = 100;
-    let items = [
-        "スーパーキノコ","ファイアフラワー","でかキノコ","スーパーボールフラワー","スーパースター","1UPキノコ","くさったキノコ"
-    ];
-    let item = 100;
-    let bosses = ["クッパ","クッパJr."];
-    let boss = 3;
-    let boombooms = "ブンブン";
-    let boomboom = 5;
-    //楽器とパーツの表示切り替え
     let ob_name = 0;
-    //ページ切り替え
-    let page = 1;
+    let scroll_count = 1;
+    //入力に対し近いBPMを表示
     function change_bpm(bpm) {
-        for(let i = 0; i<= 11; i++){
+        for (let i = 0; i <= 11; i++) {
             if (bpm <= originalbpm[i]) {
                 return bpms[i];
             }
         }
     }
-    //入力に対し近いBPMを抽出
+    //変換されたBPMに応じてスクロール手段を表示
     function change_object(bpm) {
-        for(let i = 0; i<=11; i++){
+        for (let i = 0; i <= 11; i++) {
             if (bpm == bpms[i]) {
                 return objects[i];
             }
         }
     }
     //高さに応じて音を鳴らす
-    function musical_scal(row,text) {
-        for(let i = 1; i <= 25; i++){
+    function musical_scal(row, text) {
+        for (let i = 1; i <= 25; i++) {
             if (row == i) {
                 var s1 = new Audio(text + sorces[row - 1]);
                 return s1.play();
@@ -365,40 +325,19 @@ $(document).ready(function () {
         }
     }
 
-    function play_back(row,text) {
-        musical_scal(row,text);
+    function play_back(row, text) {
+        musical_scal(row, text);
     }
     //BPMに応じて16分の間隔を調整
     function note_check() {
-        if (scl == 28) {
-            note = 500;
-        } else if (scl == 56) {
-            note = 250;
-        } else if (scl == 85) {
-            note = 164.705882;
-        } else if (scl == 112) {
-            note = 125;
-        } else if (scl == 140) {
-            note = 100;
-        } else if (scl == 168) {
-            note = 83.3333333;
-        } else if (scl == 196) {
-            note = 71.4285714;
-        } else if (scl == 224) {
-            note = 62.5;
-        } else if (scl == 250) {
-            note = 56;
-        } else if (scl == 280) {
-            note = 50;
-        } else if (scl == 310) {
-            note = 45.1612903;
-        } else {
-            note = 38.8888889;
+        for (let i = 0; i < bpms.length; i++) {
+            if (scl == bpms[i]) {
+                note = bpms_note[i];
+            }
         }
     }
     //遅延
-    function diray() {
-    }
+    function diray() {}
     let counta = 1;
     //和音を再生
     function playchord(num) {
@@ -424,41 +363,41 @@ $(document).ready(function () {
     //左から順番に再生
     function playback() {
         note_check();
-        for(let i= 1; i <= 416; i++){
+        for (let i = 1; i <= 416; i++) {
             if ($(".play" + i).hasClass("play_" + i) || $(".play" + i).hasClass("play__" + i) || $(".play" + i).hasClass("play___" + i) || $(".play" + i).hasClass("play____" + i)) {
                 playchord(i);
             } else {
-                setTimeout(diray, note * (i-1));
+                setTimeout(diray, note * (i - 1));
             }
         }
     }
     //再生するためのクラスを付与
     function addclass(col) {
-        for(let i = 1; i<= 416; i++){
+        for (let i = 1; i <= 416; i++) {
             if (col == i) {
-                if (!$(".play" + i).hasClass("play_" + i)){
+                if (!$(".play" + i).hasClass("play_" + i)) {
                     return "play_" + i;
-                }else if (!$(".play" + i).hasClass("play__" + i)){
+                } else if (!$(".play" + i).hasClass("play__" + i)) {
                     return "play__" + i;
-                }else if (!$(".play" + i).hasClass("play___" + i)){
+                } else if (!$(".play" + i).hasClass("play___" + i)) {
                     return "play___" + i;
-                }else if (!$(".play" + i).hasClass("play____" + i)){
+                } else if (!$(".play" + i).hasClass("play____" + i)) {
                     return "play____" + i;
                 }
             }
         }
     }
     //再生するためのクラスを取り除く
-    function removeclass(col, row){
-        for(let i = 1; i<= 416; i++){
+    function removeclass(col, row) {
+        for (let i = 1; i <= 416; i++) {
             if (col == i) {
-                if ($(".play" + i).hasClass("play_" + i) && $(".r" + row).hasClass("play_" + i)){
+                if ($(".play" + i).hasClass("play_" + i) && $(".r" + row).hasClass("play_" + i)) {
                     return "play_" + i;
-                }else if ($(".play" + i).hasClass("play__" + i) && $(".r" + row).hasClass("play__" + i)){
+                } else if ($(".play" + i).hasClass("play__" + i) && $(".r" + row).hasClass("play__" + i)) {
                     return "play__" + i;
-                }else if ($(".play" + i).hasClass("play___" + i) && $(".r" + row).hasClass("play___" + i)){
+                } else if ($(".play" + i).hasClass("play___" + i) && $(".r" + row).hasClass("play___" + i)) {
                     return "play___" + i;
-                }else if ($(".play" + i).hasClass("play____" + i) && $(".r" + row).hasClass("play____" + i)){
+                } else if ($(".play" + i).hasClass("play____" + i) && $(".r" + row).hasClass("play____" + i)) {
                     return "play____" + i;
                 }
             }
@@ -468,33 +407,12 @@ $(document).ready(function () {
     function instruments_check() {
         for (let num = 0; num <= 48; num++) {
             if (select_ob == instruments[num].name) {
-                if (ob_name == 0){
+                if (ob_name == 0) {
                     return instruments[num].instrument;
-                }else{
+                } else {
                     return instruments[num].name;
                 }
             }
-        }
-    }
-    //残り設置可能数を計算
-    function number_of(text){
-        for(let i = 0; i < items.length ; i++){
-            if(text == items[i]){
-                return item;
-            }
-        }
-        for(let i = 0; i < enemy_and_devices.length ; i++){
-            if(text == enemy_and_devices[i]){
-                return enemy_and_device;
-            }
-        }
-        for(let i = 0; i < bosses.length ; i++){
-            if(text == bosses[i]){
-                return boss;
-            }
-        }
-        if(text == boombooms){
-            return boomboom;
         }
     }
     //消しボタン
@@ -511,12 +429,8 @@ $(document).ready(function () {
     });
     //全消しボタン
     function removeplay() {
-        for(let i=1; i<=416; i++){
-            $(".piano td").removeClass("play_" + i);
-            $(".piano td").removeClass("play__" + i);
-            $(".piano td").removeClass("play___" + i);
-            $(".piano td").removeClass("play____" + i);
-        }
+        $(".piano td").removeClass();
+        $(".piano td").css("background-color", "")
     }
     $(".allerase").click(function () {
         let allerase = confirm("配置したパーツをリセットします。よろしいですか？");
@@ -526,18 +440,7 @@ $(document).ready(function () {
             $(".items-list").removeClass("show-list");
             erase = 0;
             draw = 1;
-        } else {
-
         }
-    });
-    //小節表クリック
-    $(".edit_table1 td").click(function() {
-        /*
-        $(".edit_table1 td").css("border","2px solid");
-        $(".edit_table1 td").css("border-color","black");
-        $(this).css("border","4px solid");
-        $(this).css("border-color","red");
-        */
     });
     //マス目クリック
     $(".piano_table td").click(function () {
@@ -547,21 +450,18 @@ $(document).ready(function () {
         col += 1;
         //console.log("Row:" + row + "Col:" + col);
         if (select_ob != "" && draw == 1) {
-            if($(this).text() == ""){
+            if ($(this).text() == "") {
                 $(this).addClass(addclass(col));
             }
             $(this).text(instruments_check());
-            $(this).css("background-color","#ffe4e1");
+            $(this).css("background-color", "#ffe4e1");
             $("td", $(this).parent().prevAll().eq(0)).eq($(this).index()).text(select_ob + "+雲");
-            /*
-            $("td", $(this).parent().prevAll().eq(1)).eq($(this).index()).css("background-color", "pink");
-            */
-            let text= $(this).text();
-            musical_scal(row,text);
+            let text = $(this).text();
+            musical_scal(row, text);
         } else {
             $(this).text("");
             $("td", $(this).parent().prevAll().eq(0)).eq($(this).index()).text("");
-            $(this).css("background-color","");
+            $(this).css("background-color", "");
             $(this).removeClass(removeclass(col, row));
         }
     });
@@ -586,15 +486,13 @@ $(document).ready(function () {
         $(".selecting2").removeClass("selecting2");
         $(this).addClass("selecting2");
         select_ob = $(this).text();
-        $("#select_p").text(select_ob);// + "(残り設置可能数:" + number_of(select_ob) + ")");
+        $("#select_p").text(select_ob);
         for (let num = 0; num <= 48; num++) {
             if (select_ob == instruments[num].name) {
                 $("#select_m").text(instruments[num].instrument);
             }
         }
-        
     });
-    let hoverob = "";
     //選択中のボタン
     $("button.buttons1").click(function () {
         $("button.buttons1").removeClass("border");
@@ -609,37 +507,38 @@ $(document).ready(function () {
         }
     });
     //小節線クリック
-    for(let i=1; i<=26; i++){
+    for (let i = 1; i <= 26; i++) {
         $("#ameasure" + i).click(function () {
             $(".piano_box").animate({
-                scrollLeft : measures[i - 1]
+                scrollLeft: measures[i - 1]
             }, {
-                queue : false
+                queue: false
             });
         });
     }
-    $(".piano_box").on("scroll",function(){
+    //エディット画面横スクロール
+    $(".piano_box").on("scroll", function () {
         scll = $(".piano_box").scrollLeft();
         scll += 1;
-        for(let i=1; i<=26; i++){
-            if(scll < measures[i] && scll > measures[i - 1]){
-                $("#ameasure" + i).css("border","4px solid");
-                $("#ameasure" + i).css("border-color","red");
+        for (let i = 1; i <= 26; i++) {
+            if (scll < measures[i] && scll > measures[i - 1]) {
+                $("#ameasure" + i).css("border", "4px solid");
+                $("#ameasure" + i).css("border-color", "red");
             }
-            if(scll < measures[i - 1] || scll > measures[i]){
-                $("#ameasure" + i).css("border","2px solid");
-                $("#ameasure" + i).css("border-color","black");
+            if (scll < measures[i - 1] || scll > measures[i]) {
+                $("#ameasure" + i).css("border", "2px solid");
+                $("#ameasure" + i).css("border-color", "black");
             }
         }
     });
-    $("#ameasure1").css("border","4px solid");
-    $("#ameasure1").css("border-color","red");
+    $("#ameasure1").css("border", "4px solid");
+    $("#ameasure1").css("border-color", "red");
     //スクロール追従
-    $(window).on("scroll",function(){
-        if($(this).scrollTop() > 180){
+    $(window).on("scroll", function () {
+        if ($(this).scrollTop() > 180) {
             $(".opsions").addClass("fixed");
             $(".edit_table1").addClass("fixed");
-        }else{
+        } else {
             $(".opsions").removeClass("fixed");
             $(".edit_table1").removeClass("fixed");
         }
