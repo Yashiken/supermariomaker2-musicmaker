@@ -109,7 +109,7 @@ header li {
 }
 
 .piano_table {
-    margin-left: 15%;
+    margin-left: 13%;
     border-collapse: collapse;
     border: 3px solid;
     border-left: 1px solid;
@@ -120,16 +120,15 @@ header li {
     font-size: 0.2em;
     border: 2px solid;
     border-color: dimgrey;
-    height: 5em;
-    width: 5em;
-    min-width: 5em;
+    height: 6.2vh;
+    width: 6.2vh;
+    min-width: 6.2vh;
 }
-
 #piano {
     position: absolute;
     top: 0%;
-    height: 1356px;
-    left: 2vw;
+    height: 165.1vh;
+    left: 1vw;
     background-color: white;
 }
 
