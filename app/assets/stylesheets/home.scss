@@ -50,7 +50,7 @@ header li {
 
 .main {
     background-color: #facd00;
-    height: 64.5vh;
+    height: 700px;
     font-size: 45px;
     text-align: center;
     padding: 2% 0;
@@ -109,27 +109,33 @@ header li {
 }
 
 .piano_table {
-    margin-left: 13%;
+    margin-left: 12vw;
     border-collapse: collapse;
     border: 3px solid;
     border-left: 1px solid;
 }
-
+.r3, .r5, .r7, .r10, .r12, .r15, .r17, .r19, .r22, .r24{
+    background-color: gray;
+}
 .piano_table td {
     text-align: center;
     font-size: 0.2em;
     border: 2px solid;
     border-color: dimgrey;
-    height: 6.2vh;
-    width: 6.2vh;
-    min-width: 6.2vh;
+    height: 60px;
+    width: 60px;
+    min-width: 60px;
 }
 #piano {
     position: absolute;
     top: 0%;
-    height: 165.1vh;
+    height: 1606px;
     left: 1vw;
     background-color: white;
+}
+html #piano{
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='alpha.png',sizingMethod='scale');
+	background:none;
 }
 
 .piano {
@@ -140,7 +146,7 @@ header li {
 .opsions {
     position: absolute;
     z-index: 300;
-    right: 3%;
+    right: 2%;
     top: 0%;
 }
 .tools {
@@ -150,7 +156,7 @@ header li {
 }
 
 .opsions input {
-    width: 15vw;
+    width: 300px;
     height: 1.2vw;
 }
 
@@ -188,8 +194,8 @@ button.selecting2 {
 }
 button.buttons1 {
     background-color: lightblue;
-    height: 8vh;
-    width: 5vw;
+    height: 95px;
+    width: 95px;
     font-size: 1em;
     margin-left: 28px;
 }
@@ -200,8 +206,8 @@ button.buttons1:hover {
 
 button.buttons2 {
     background-color: orange;
-    height: 9vh;
-    width: 5vw;
+    height: 95px;
+    width: 95px;
 }
 
 button.buttons2:hover {
@@ -220,14 +226,14 @@ button.buttons2:hover {
     margin-left: 10%;
     width: 70vw;
 }
-.piano_box{
-    max-width: 64em;
+.piano_box{ 
+    max-width: 1300px; //表示するマス目を指定
 }
 #select_p span, #select_m span{
     float: left;
 }
 .sidebar h3{
-    font-size: 2vh;
+    font-size: 1em;
 }
 #emp{
     width: 46vw;
