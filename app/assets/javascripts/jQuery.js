@@ -415,6 +415,29 @@ $(document).ready(function () {
             }
         }
     }
+    //サイドボタン
+    $(".sidebtn").click(function(){
+        if($(".sidebar").hasClass("on")){
+            $(".sidebar").removeClass("on");
+            $(".sidebar").addClass("off");
+        }else{
+            $(".sidebar").removeClass("off");
+            $(".sidebar").addClass("on");
+        }
+    });
+    //ボトムボタン
+    $(".bottom_btn").click(function(){
+        if($(".object_btn").hasClass("on")){
+            $(".object_btn").removeClass("on");
+            $(".object_btn").addClass("off");
+        }else if($(".object_btn").hasClass("off")){
+            $(".object_btn").removeClass("off");
+            $(".object_btn").addClass("on");
+        }else{
+            $(".object_btn").removeClass("on");
+            $(".object_btn").addClass("off");
+        }
+    });
     //消しボタン
     $(".erase").click(function () {
         erase = 1;

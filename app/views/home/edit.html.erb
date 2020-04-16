@@ -33,6 +33,9 @@
     <div class="items-list">
         <div class="game_skin">
         <div class="object_btns">
+            <!--
+                <button class="bottom_btn"></button>
+            -->
             <div class="object_btn">
                 <%@bros_enemys.each do | bros_enemy |%>
                     <button class="ob_btn"><%=bros_enemy%></button>
@@ -89,6 +92,23 @@
             <div class="piano_box" style="overflow:auto;"><!-- マス目の表示範囲 -->
                 <table class="piano_table">
                     <%for i in 1..25 do%>
+                        <%if i == 1%>
+                            <tr>
+                                <%for num in 0..415 do%>
+                                    <%if num == 0 && i == 1 || num % 16 == 0%>
+                                        <%am = num / 16 + 1%>
+                                        <%if am <= 13%>
+                                            <th><%=am%></th>
+                                        <%else%>
+                                            <%am -= 13%>
+                                            <th><%=am%></th>
+                                        <%end%>
+                                    <%else%>
+                                        <th></th>
+                                    <%end%>
+                                <%end%>
+                            </tr>
+                        <%end%>
                         <%measure = 0%> 
                         <%if i != 11%>
                             <tr>
@@ -125,7 +145,10 @@
             </div>
             <img src="/piano.png" id="piano">
         </div>
-            <div class="opsions sidebar">
+            <!--
+                <button class="sidebtn">●</button>
+            -->
+            <div class="opsions sidebar on">
                 <h3>変換前BPM</h3>
                 <input type="number" id="bpm" placeholder="原曲のBPMを入力">
                 <button class="trans">変換</button>
@@ -146,7 +169,7 @@
                     <button id="playback" class="buttons1">再生</button>
                 </div>
             </div>
-            <div class="edit_table1 sidebar">
+            <div class="edit_table1 sidebar on">
                     <span class="measures"><h3>小節</h3></span>
                     <table>
                         <tr>

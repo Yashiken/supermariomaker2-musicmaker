@@ -68,7 +68,7 @@ header li {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 64.5em;
+    width: 1310px;
     background-color: rgba(255, 255, 255, 0.8);
     border-top: 2px solid;
     border-color: lightgray;
@@ -126,9 +126,10 @@ header li {
     width: 60px;
     min-width: 60px;
 }
+
 #piano {
     position: absolute;
-    top: 0%;
+    top: 28.5px;
     height: 1606px;
     left: 1vw;
     background-color: white;
@@ -165,6 +166,18 @@ html #piano{
     padding: 5px;
     float: left;
     font-size: 0.8em;
+}
+.sidebtn{
+    display: inline-block;
+}
+.sidebtn{
+    position: absolute;
+    right: 2%;
+    top: 0;
+    z-index: 500;
+}
+.sidebtn_off.fixed{
+    position: fixed;
 }
 .sidebar.fixed{
     position: fixed;
@@ -240,4 +253,13 @@ button.buttons2:hover {
 }
 #emp2{
     width: 46vw;
+}
+.on{
+    display: show;
+}
+.off{
+    display: none;
+}
+.edit{
+    height: 1730px
 }
