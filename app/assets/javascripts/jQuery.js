@@ -537,14 +537,7 @@ $(document).ready(function() {
 	//再生ボタン
 	$("#playback").click(function() {
 		if ($(this).text() == "再生" && scl >= 28) {
-			$(this).text("停止");
 			playback();
-			$(".piano_box").animate({
-				scrollLeft: 55
-			},0)
-			$(".piano_box").animate({
-				scrollLeft: 175
-			}, 1000)
 		} else if ($(this).text() == "停止") {
 			$(this).text("再生");
 			clearTimeout(timer);
