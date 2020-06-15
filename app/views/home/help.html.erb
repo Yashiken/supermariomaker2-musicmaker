@@ -1,48 +1,59 @@
 <!DOCTYPE html>
+<html>
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152935942-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152935942-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-152935942-1');
-</script>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-152935942-1');
+
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
 </head>
 <header>
-    <a href="/"><img src="/sitelogo_m.png" id="sitelogo"></a>
-    <ul class="menus">
-        <li class="l" id="help"><a href="/help" target=”_blank”>使い方</a></li>
-        <li class="l"><a><%= link_to "エディット", "/edit", data: {"turbolinks" => false}%></a></li>
-        <!--<li class="l"><a href="/save">コースロボット</a></li>
+	<a href="/"><img src="/sitelogo_m.png" id="sitelogo"></a>
+	<ul class="menus">
+		<li class="l" id="help"><a href="/help" target=”_blank”>使い方</a></li>
+		<li class="l"><a><%= link_to "エディット", "/edit", data: {"turbolinks" => false}%></a></li>
+		<!--<li class="l"><a href="/save">コースロボット</a></li>
         <li class="r" id="signup"><a href="#">新規登録</a></li>
         <li class="r"><a href="#">ログイン</a></li>-->
-    </ul>
+	</ul>
 </header>
+<body>
+<div class="block"></div>
 <div class="help">
-    <h1>使い方</h1>
-    <h2>1.曲のBPMを入力</h2>
-    <p>入力フォームに作りたい曲のBPMを入力すると、それに近いゲーム内で再現可能なBPMと<br>そのBPMに対応したスクロール手段が表示されます。</p>
-    <h2>2.ゲームスキンを選択</h2>
-    <p>使用したいゲームスキンを選択してください。選択したスキンに応じてそのスキンで使用可能なパーツが表示されます。</p>
-    <h2>3.パーツを設置</h2>
-    <p>パーツをクリックで選択し、エディット画面をクリックすると、選択中のパーツに応じて楽器名とその上にパーツ名が表示されます。</p>
-    <h2>4.再生</h2>
-    <p>1で入力したBPMに応じてエディット画面の通りに左から再生されます。</p>
-    <h2>5.ゲーム内での設置</h2>
-    <p>ゲーム内でエディット画面の楽器名(ピンク色の背景)の位置に♪ブロック(楽器ブロック)、その上のマスに書いてあるパーツを♪ブロックの上に配置してください。</p>
-    <p>エディット画面の一番左のマスはゲーム内の左から数えて1つ目の太線から4マス目になります。</p>
-    <p>例として、画像(上)をゲーム内で設置すると画像(下)のような配置になります。</p>
-    <img src="example2.png" id="emp2">
-    <img src="example.jpg" id="emp">
-    <h2>6.その他</h2>
-    <p>ゲーム内のマス目の高さは27マスですが、エディット画面は上から1番目と2番目は省略、下から数えて25マスまでになっています。</p>
-    <p>消すボタンを使うときは楽器名の方をクリックしてください。</p>
-    <p>エディット画面は1マス16分音符になっています。
-    <p>和音は4音(縦1列に4音)までの対応です。</p>
-    <p>即座に音を鳴らすのが困難なパーツは除外してあります。</p>
-    <h2>★こちらにご意見やご感想などを述べていただけると幸いです。★</h2>
-    <%= link_to("Gmail","mailto:f18ba057@gmail.com?body=こちらにご意見やご感想など自由に記述してください。",target: :_blank)%>
+	<h1>使い方</h1>
+	<h2>1.曲のBPMを入力</h2>
+	<p>入力フォームに作りたい曲のBPMを入力し、変換ボタンをクリックすると、それに近いゲーム内で再現可能なBPMと<br>そのBPMに対応したスクロール手段が表示されます。</p>
+	<h2>2.ゲームスキンを選択</h2>
+	<p>使用したいゲームスキンを選択してください。選択したスキンに応じてそのスキンで使用可能なパーツが表示されます。</p>
+	<h2>3.パーツを設置</h2>
+	<p>パーツをクリックで選択し、エディット画面をクリックすると、選択中のパーツに応じて楽器名とその上にパーツ名が表示されます。</p>
+	<h2>4.再生</h2>
+	<p>1で入力したBPMに応じてエディット画面の通りに左から再生されます。</p>
+	<h2>5.ゲーム内での設置</h2>
+	<p>ゲーム内でエディット画面の楽器名(ピンク色の背景)の位置に♪ブロック(楽器ブロック)、その上のマスに書いてあるパーツを♪ブロックの上に配置してください。</p>
+	<p>エディット画面の一番左のマスはゲーム内の左から数えて1つ目の太線から4マス目になります。</p>
+	<p>例として、画像(上)をゲーム内で設置すると画像(下)のような配置になります。</p>
+	<img src="/note-example.png" id="emp2">
+	<img src="/example.jpg" id="emp">
+	<h2>6.その他</h2>
+	<p>左のピアノをクリックするとクリックした箇所に応じて音が鳴ります。</p>
+	<p>ゲーム内のマス目の高さは27マスですが、エディット画面は上から1番目と2番目は省略、下から数えて25マスまでになっています。</p>
+	<p>消すボタンを使うときは楽器名の方をクリックしてください。</p>
+	<p>エディット画面は1マス16分音符になっています。
+		<p>和音は4音(縦1列に4音)までの対応です。</p>
+		<p>即座に音を鳴らすのが困難なパーツは除外してあります。</p>
+		<h2>★こちらにご意見やご感想などを述べていただけると幸いです。★</h2>
+		<%= link_to("Gmail","mailto:f18ba057@gmail.com?body=こちらにご意見やご感想など自由に記述してください。",target: :_blank)%>
 </div>
+<div class="block"></div>
+</body>
+</html>

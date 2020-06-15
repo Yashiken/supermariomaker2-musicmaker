@@ -1,29 +1,40 @@
 <!DOCTYPE html>
+<html>
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152935942-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152935942-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-152935942-1');
-</script>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-152935942-1');
+
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
 </head>
 <header>
-    <a href="/"><img src="/sitelogo_m.png" id="sitelogo"></a>
-    <ul class="menus">
-        <li class="l"><a href="/help">使い方</a></li>
-        <li class="l"><a><%= link_to "エディット", "/edit", data: {"turbolinks" => false}%></a></li>
-        <!--<li class="l"><a href="/save">コースロボット</a></li>-->
-        <!--<li class="r" id="signup"><a href="#">新規登録</a></li>-->
-        <!--<li class="r"><a href="#">ログイン</a></li>-->
-    </ul>
+	<a href="/"><img src="/sitelogo_m.png" id="sitelogo"></a>
+	<ul class="menus">
+		<li class="l"><a href="/help">使い方</a></li>
+		<li class="l"><a><%= link_to "エディット", "/edit", data: {"turbolinks" => false}%></a></li>
+		<!--<li class="l"><a href="/save">コースロボット</a></li>-->
+		<!--<li class="r" id="signup"><a href="#">新規登録</a></li>-->
+		<!--<li class="r"><a href="#">ログイン</a></li>-->
+	</ul>
 </header>
-<div class="main">
-    <h2>演奏コース作成を簡単に！</h2>
-    <h2>初心者でも作りやすく！</h2>
-    <h2><a><%= link_to "さあ、演奏職人になろう！", "/edit", data: {"turbolinks" => false}%></a></h2>
-    
+<body>
+<div class="block"></div>
+<div class="covers">
+	<div class="main">
+		<h2>演奏コース作成を簡単に！</h2>
+		<h2>初心者でも作りやすく！</h2>
+		<h2><a><%= link_to "さあ、演奏職人になろう！", "/edit", data: {"turbolinks" => false}%></a></h2>
+	</div>
 </div>
+<div class="block"></div>
+</body>
+</html>

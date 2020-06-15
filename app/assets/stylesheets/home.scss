@@ -1,265 +1,376 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.help, .sidebuttons{
-    font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-}
-
-
-#sitelogo {
-    margin: 10px 0px 10px 40px;
-    height: 100px;
-}
-
 header {
-    z-index: 10;
-    height: 200px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	#sitelogo {
+		margin: 10px 0px 10px 40px;
+		height: 100px;
+	}
+
+	z-index: 10;
+	height: 200px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+
+	ul :hover {
+		opacity: 0.7;
+	}
+
+	li {
+		font-size: 25px;
+		padding: 0 50px;
+		list-style: none;
+		float: left;
+
+		a {
+			text-decoration: none;
+			color: black;
+		}
+	}
+
+	#edit,
+	#help,
+	#save {
+		padding-bottom: 20px;
+		border-bottom: 4px solid;
+	}
 }
 
-header li {
-    font-size: 25px;
-    padding: 0 50px;
-    list-style: none;
+body {
+	font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	background-color: #facd00;
 }
 
-.menus a {
-    text-decoration: none;
-    color: black;
+table {
+	background-color: white;
 }
 
-.menus a:hover {
-    opacity: 0.7;
-}
-
-.l {
-    float: left;
-}
-
-.r {
-    float: right;
-}
-
-.edit{
-    height: 1450px;
-}
-#signup {
-    padding-right: 50px;
+.block {
+	height: 100px;
+	background-image: url(/block.png);
+	background-size: cover;
 }
 
 .main {
-    background-color: #facd00;
-    height: 700px;
-    font-size: 45px;
-    text-align: center;
-    padding: 2% 0;
+	background-color: #facd00;
+	font-size: 45px;
+	text-align: center;
+	padding: 2% 0;
 }
 
-#edit,
-#help,
-#save {
-    padding-bottom: 20px;
-    border-bottom: 4px solid;
+.help {
+	margin-left: 10%;
+	width: 70vw;
+	padding: 50px;
+	background-color: white;
+
+	#emp {
+		width: 46vw;
+	}
+
+	#emp2 {
+		width: 46vw;
+	}
 }
+
+.edit {
+	height: 1800px;
+}
+
+.edit_table2 {
+	margin-top: 0.2%;
+}
+
 .items-list {
-    display: none;
-    z-index: 100;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 1310px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-top: 2px solid;
-    border-color: lightgray;
-}
-.items-list li {
-    float: left;
+	display: none;
+	z-index: 100;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 1310px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-top: 2px solid;
+	border-color: lightgray;
+
+	li {
+		float: left;
+	}
+
 }
 
 .show-list {
-    display: block;
-}
-
-.edit_table1 {
-    z-index: 5;
-    padding: 90px 0;
-    position: absolute;
-    top: 45vh;
-    right: 2%;
-}
-.surface {
-    background-color: black;
-    color: white;
-}
-.edit_table1 table {
-    border-collapse: collapse;
-    border: 2px solid;
-}
-
-.edit_table1 td {
-    text-align: center;
-    height: 2vw;
-    width: 1.4vw;
-    min-width: 2%;
-    border: 2px solid;
-}
-.edit_table2 {
-    margin-top: 0.2%;
-}
-
-.piano_table {
-    margin-left: 12vw;
-    border-collapse: collapse;
-    border: 3px solid;
-    border-left: 1px solid;
-}
-.r3, .r5, .r7, .r10, .r12, .r15, .r17, .r19, .r22, .r24{
-    background-color: gray;
-}
-.piano_table td {
-    text-align: center;
-    font-size: 0.2em;
-    border: 2px solid;
-    border-color: dimgrey;
-    height: 60px;
-    width: 60px;
-    min-width: 60px;
-}
-
-#piano {
-    position: absolute;
-    top: 28.5px;
-    height: 1606px;
-    left: 1vw;
-    background-color: white;
-}
-html #piano{
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='alpha.png',sizingMethod='scale');
-	background:none;
-}
-
-.piano {
-    position: relative;
-    margin-top: 2%;
-}
-
-.opsions {
-    position: absolute;
-    z-index: 300;
-    right: 2%;
-    top: 0%;
-}
-.tools {
-    position: absolute;
-    left: 1070px;
-    top: 40%;
-}
-
-.opsions input {
-    width: 300px;
-    height: 1.2vw;
-}
-
-.gameskin {
-    list-style: none;
-    padding: 5px;
-    float: left;
-    font-size: 0.8em;
-}
-.sidebtn{
-    display: inline-block;
-}
-.sidebtn{
-    position: absolute;
-    right: 2%;
-    top: 0;
-    z-index: 500;
-}
-.sidebtn_off.fixed{
-    position: fixed;
-}
-.sidebar.fixed{
-    position: fixed;
+	display: block;
 }
 
 .object_btn {
-    display: none;
-}
-.selecting {
-    display: inline-block;
-    background-color: red;
+	display: none;
 }
 
 .cansee {
-    display: block;
+	display: block;
+}
+
+.ob_btn {
+	background-color: rgb(250, 212, 3);
+
+	&:hover {
+		color: white;
+	}
 }
 
 button.selecting2 {
-    background-color: saddlebrown;
-    color: white;
-}
-.ob_btn{
-    background-color: rgb(250,212,3);
-}
-.ob_btn:hover {
-    color: white;
-}
-button.buttons1 {
-    background-color: lightblue;
-    height: 95px;
-    width: 95px;
-    font-size: 1em;
-    margin-left: 28px;
+	background-color: saddlebrown;
+	color: white;
 }
 
-button.buttons1:hover {
-    background-color: blue;
+.piano {
+	position: relative;
+	margin-top: 2%;
+}
+
+.window {
+	button {
+		position: absolute;
+		opacity: 0.01;
+		height: 50px;
+		width: 135px;
+		left: 1.5vw;
+	}
+}
+
+.piano_box {
+	max-width: 1300px; //表示するマス目を指定
+
+}
+
+.piano_table {
+	margin-left: 12vw;
+	border-collapse: collapse;
+	border: 3px solid;
+	border-left: 1px solid;
+
+	td {
+		text-align: center;
+		font-size: 0.2em;
+		border: 2px solid;
+		border-color: dimgrey;
+		height: 60px;
+		width: 60px;
+		min-width: 60px;
+
+	}
+
+	.r3,
+	.r5,
+	.r7,
+	.r10,
+	.r12,
+	.r15,
+	.r17,
+	.r19,
+	.r22,
+	.r24 {
+		background-color: gray;
+	}
+}
+
+#piano {
+	position: absolute;
+	top: 23px;
+	height: 1606px;
+	left: 1vw;
+	background-color: white;
+}
+
+html #piano {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='alpha.png', sizingMethod='scale');
+	background: none;
+}
+
+button.n1 {
+	top: 34px;
+}
+
+button.n2 {
+	top: 100px;
+}
+
+button.n3 {
+	top: 162px;
+}
+
+button.n4 {
+	top: 224px;
+}
+
+button.n5 {
+	top: 290px;
+}
+
+button.n6 {
+	top: 350px;
+}
+
+button.n7 {
+	top: 417px;
+}
+
+button.n8 {
+	top: 476px;
+}
+
+button.n9 {
+	top: 540px;
+}
+
+button.n10 {
+	top: 610px;
+}
+
+button.n11 {
+	top: 674px;
+}
+
+button.n12 {
+	top: 738px;
+}
+
+button.n13 {
+	top: 802px;
+}
+
+button.n14 {
+	top: 868px;
+}
+
+button.n15 {
+	top: 930px;
+}
+
+button.n16 {
+	top: 993px;
+}
+
+button.n17 {
+	top: 1059px;
+}
+
+button.n18 {
+	top: 1123px;
+}
+
+button.n19 {
+	top: 1187px;
+}
+
+button.n20 {
+	top: 1247px;
+}
+
+button.n21 {
+	top: 1315px;
+}
+
+button.n22 {
+	top: 1379px;
+}
+
+button.n23 {
+	top: 1442px;
+}
+
+button.n24 {
+	top: 1507px;
+}
+
+button.n25 {
+	top: 1566px;
+}
+
+.opsions {
+	position: absolute;
+	z-index: 300;
+	right: 2%;
+	top: 0%;
+
+	input {
+		width: 300px;
+		height: 1.2vw;
+	}
+}
+
+.sidebar {
+	h3 {
+		font-size: 1em;
+	}
+
+	&.fixed {
+		position: fixed;
+	}
+}
+
+.on {
+	display: show;
+}
+
+.gameskin {
+	list-style: none;
+	padding: 5px;
+	float: left;
+	font-size: 0.8em;
 }
 
 button.buttons2 {
-    background-color: orange;
-    height: 95px;
-    width: 95px;
+	background-image: url(/brickblock.png);
+	background-size: cover;
+	height: 95px;
+	width: 95px;
+	color: white;
+	font-weight: bold;
+
+	&:hover {
+		background-image: url(/usedblock.png);
+		background-size: cover;
+	}
 }
 
-button.buttons2:hover {
-    background-color: orangered;
+button.buttons1 {
+	color: white;
+	font-weight: bold;
+	background-image: url(/brickblock-gray.png);
+	background-size: cover;
+	height: 95px;
+	width: 95px;
+	font-size: 1em;
+	margin-left: 28px;
+
+	&:hover {
+		background-image: url(/usedblock-gray.png);
+		background-size: cover;
+	}
 }
 
-.border {
-    border-color: red;
-    border: 3px solid;
-}
-.page_none{
-    display: none;
+.edit_table1 {
+	z-index: 5;
+	padding: 90px 0;
+	position: absolute;
+	top: 45vh;
+	right: 2%;
+
+	table {
+		border-collapse: collapse;
+		border: 2px solid;
+	}
+
+	td {
+		text-align: center;
+		height: 2vw;
+		width: 1.4vw;
+		min-width: 2%;
+		border: 2px solid;
+	}
 }
 
-.help{
-    margin-left: 10%;
-    width: 70vw;
-}
-.piano_box{ 
-    max-width: 1300px; //表示するマス目を指定
-}
-#select_p span, #select_m span{
-    float: left;
-}
-.sidebar h3{
-    font-size: 1em;
-}
-#emp{
-    width: 46vw;
-}
-#emp2{
-    width: 46vw;
-}
-.on{
-    display: show;
-}
-.off{
-    display: none;
-}
-.edit{
-    height: 1730px
+.surface {
+	background-color: black;
+	color: white;
 }

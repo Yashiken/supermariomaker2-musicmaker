@@ -1,219 +1,226 @@
 <!DOCTYPE html>
 <html>
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152935942-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-152935942-1');
-</script>
-    <meta charset= “utf-8”>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152935942-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-152935942-1');
+
+	</script>
+	<meta charset=“utf-8”>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <header>
-    <a href="/"><img src="/sitelogo_m.png" id="sitelogo"></a>
-    <ul class="menus">
-        <li class="l"><%= link_to("使い方","/help",target: :_blank)%></li>
-        <li class="l" id="edit"><a><%= link_to "エディット", "/edit", data: {"turbolinks" => false}%></a></li>
-        <!--<li class="l"><a href="/save">コースロボット</a></li>
-        <li class="r" id="signup"><a href="#">新規登録</a></li>
-        <li class="r"><a href="#">ログイン</a></li>-->
-    </ul>
+	<a href="/"><img src="/sitelogo_m.png" id="sitelogo"></a>
+	<ul class="menus">
+		<li class="l"><%= link_to("使い方","/help",target: :_blank)%></li>
+		<li class="l" id="edit"><a><%= link_to "エディット", "/edit", data: {"turbolinks" => false}%></a></li>
+	</ul>
 </header>
 
 <body>
-<div class="edit">
-
-<div class="edit_table2">
-    <div class="items-list">
-        <div class="game_skin">
-        <div class="object_btns">
-            <!--
-                <button class="bottom_btn"></button>
-            -->
-            <div class="object_btn">
-                <%@bros_enemys.each do | bros_enemy |%>
-                    <button class="ob_btn"><%=bros_enemy%></button>
-                <%end%>
-                <%@bros_items.each do | bros_items |%>
-                    <button class="ob_btn"><%=bros_items%></button>
-                <%end%>
-                <%@bros_bosses.each do | boss |%>
-                    <button class="ob_btn"><%=boss%></button>
-                <%end%>
-                    <button class="ob_btn"><%=@bros_boomboom%></button>
-            </div>
-            <div class="object_btn">
-                <%@bros3_enemys.each do | bros3_enemy |%>
-                    <button class="ob_btn"><%=bros3_enemy%></button>
-                <%end%>
-                <%@bros3_items.each do | bros3_items |%>
-                    <button class="ob_btn"><%=bros3_items%></button>
-                <%end%>
-                <%@bros_bosses.each do | boss |%>
-                    <button class="ob_btn"><%=boss%></button>
-                <%end%>
-                <button class="ob_btn"><%=@bros_boomboom%></button>
-            </div>
-            <div class="object_btn">
-                <%@world_enemys.each do | world_enemy |%>
-                    <button class="ob_btn"><%=world_enemy%></button>
-                <%end%>
-                <%@world_items.each do | world_items |%>
-                    <button class="ob_btn"><%=world_items%></button>
-                <%end%>
-                <%@bros_bosses.each do | boss |%>
-                    <button class="ob_btn"><%=boss%></button>
-                <%end%>
-                <button class="ob_btn"><%=@bros_boomboom%></button>
-            </div>
-            <div class="object_btn">
-                <%@brosU_enemys.each do | brosU_enemy |%>
-                    <button class="ob_btn"><%=brosU_enemy%></button>
-                <%end%>
-                <%@brosU_items.each do | brosU_items |%>
-                    <button class="ob_btn"><%=brosU_items%></button>
-                <%end%>
-                <%@bros_bosses.each do | boss |%>
-                    <button class="ob_btn"><%=boss%></button>
-                <%end%>
-                <button class="ob_btn"><%=@bros_boomboom%></button>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="piano">
-        <div class="window">
-            <div class="piano_box" style="overflow:auto;"><!-- マス目の表示範囲 -->
-                <table class="piano_table">
-                    <%for i in 1..25 do%>
-                        <%if i == 1%>
-                            <tr>
-                                <%for num in 0..415 do%>
-                                    <%if num == 0 && i == 1 || num % 16 == 0%>
-                                        <%am = num / 16 + 1%>
-                                        <%if am <= 13%>
-                                            <th><%=am%></th>
-                                        <%else%>
-                                            <%am -= 13%>
-                                            <th><%=am%></th>
-                                        <%end%>
-                                    <%else%>
-                                        <th></th>
-                                    <%end%>
-                                <%end%>
-                            </tr>
-                        <%end%>
-                        <%measure = 0%> 
-                        <%if i != 11%>
-                            <tr>
-                                <%for num in 1..416 do%>
-                                    <%if num == 1 && i == 1 || num % 16 == 0%>
-                                        <%measure += 1%>
-                                        <%if num == 1%>
-                                            <td class="play<%= num%> r<%= i%>" id="measure<%= measure%>"></td>
-                                        <%else%>
-                                            <td class="play<%= num%> r<%= i%>" id="measure<%= measure%>" style="border-right: 4px solid;"></td>
-                                        <%end%>
-                                    <%elsif num % 4 != 0%>
-                                        <td class="play<%= num%> r<%= i%>"></td>
-                                    <%else%>
-                                        <td class="play<%= num%> r<%= i%>" style="border-right: 3px solid;"></td>
-                                    <%end%>
-                                <%end%>
-                            </tr>
-                        <%else%>
-                            <tr style="border-bottom: 4px solid">
-                                <%for num in 1..416 do%>
-                                    <%if num % 16 == 0%>
-                                        <td class="play<%= num%> r<%= i%>" style="border-right: 4px solid;"></td>
-                                    <%elsif num % 4 != 0%>
-                                        <td class="play<%= num%> r<%= i%>"></td>
-                                    <%else%>
-                                        <td class="play<%= num%> r<%= i%>" style="border-right: 3px solid;"></td>
-                                    <%end%>
-                                <%end%>
-                            </tr>
-                        <%end%>
-                    <%end%>
-                </table>
-            </div>
-            <img src="/piano.png" id="piano">
-        </div>
-            <!--
-                <button class="sidebtn">●</button>
-            -->
-            <div class="opsions sidebar on">
-                <h3>変換前BPM</h3>
-                <input type="number" id="bpm" placeholder="原曲のBPMを入力">
-                <button class="trans">変換</button>
-                <h3>演奏BPM</h3>
-                <input type="text" id="afterbpm">
-                <h3>スクロール手段</h3>
-                <input type="text" id="transportation">
-                <br>
-                <div class="sidebuttons">
-                    <h3>ゲームスキン</h3>
-                    <div class="gameskin"><button class="bros buttons2">スーパーマリオブラザーズ</button></div>
-                    <div class="gameskin"><button class="bros3 buttons2">スーパーマリオブラザーズ3</button></div>
-                    <div class="gameskin"><button class="world buttons2">スーパーマリオワールド</button></div>
-                    <div class="gameskin"><button class="brosU buttons2">New スーパーマリオブラザーズ U</button></div>
-                    <p></p>
-                    <button class="erase buttons1">消す</button>
-                    <button class="allerase buttons1">全消し</button>
-                    <button id="playback" class="buttons1">再生</button>
-                </div>
-            </div>
-            <div class="edit_table1 sidebar on">
-                    <span class="measures"><h3>小節</h3></span>
-                    <table>
-                        <tr>
-                            <td class="surface" style="border-color:black;">1</td>
-                            <td id="ameasure1">1</td>
-                            <td id="ameasure2">2</td>
-                            <td id="ameasure3">3</td>
-                            <td id="ameasure4">4</td>
-                            <td id="ameasure5">5</td>
-                            <td id="ameasure6">6</td>
-                            <td id="ameasure7">7</td>
-                            <td id="ameasure8">8</td>
-                            <td id="ameasure9">9</td>
-                            <td id="ameasure10">10</td>
-                            <td id="ameasure11">11</td>
-                            <td id="ameasure12">12</td>
-                            <td id="ameasure13">13</td>
-                        </tr>
-                        <tr>
-                            <td class="surface" style="border-color:black;">2</td>
-                            <td id="ameasure14">1</td>
-                            <td id="ameasure15">2</td>
-                            <td id="ameasure16">3</td>
-                            <td id="ameasure17">4</td>
-                            <td id="ameasure18">5</td>
-                            <td id="ameasure19">6</td>
-                            <td id="ameasure20">7</td>
-                            <td id="ameasure21">8</td>
-                            <td id="ameasure22">9</td>
-                            <td id="ameasure23">10</td>
-                            <td id="ameasure24">11</td>
-                            <td id="ameasure25">12</td>
-                            <td id="ameasure26">13</td>
-                        </tr>
-                    </table>
-                    <h3>選択中のパーツ</h3>
-                    <span id="select_p"></span>
-                    <!--<p>残り<span id="installed"></span>個設置可能</p>-->
-                    <h3>対応楽器</h3>
-                    <span id="select_m"></span>
-                </div>
-</div>
-</div>
-</div>
+	<div class="block"></div>
+	<div class="edit">
+		<div class="edit_table2">
+			<!-- ゲームスキンボタンごとのアイテムボタン -->
+			<div class="items-list">
+				<div class="game_skin">
+					<div class="object_btns">
+						<div class="object_btn">
+							<%@bros_enemys.each do | bros_enemy |%>
+								<button class="ob_btn"><%=bros_enemy%></button>
+							<%end%>
+							<%@bros_items.each do | bros_items |%>
+								<button class="ob_btn"><%=bros_items%></button>
+							<%end%>
+							<%@bros_bosses.each do | boss |%>
+								<button class="ob_btn"><%=boss%></button>
+							<%end%>
+							<button class="ob_btn"><%=@bros_boomboom%></button>
+						</div>
+						<div class="object_btn">
+							<%@bros3_enemys.each do | bros3_enemy |%>
+								<button class="ob_btn"><%=bros3_enemy%></button>
+							<%end%>
+							<%@bros3_items.each do | bros3_items |%>
+								<button class="ob_btn"><%=bros3_items%></button>
+							<%end%>
+							<%@bros_bosses.each do | boss |%>
+								<button class="ob_btn"><%=boss%></button>
+							<%end%>
+							<button class="ob_btn"><%=@bros_boomboom%></button>
+						</div>
+						<div class="object_btn">
+							<%@world_enemys.each do | world_enemy |%>
+								<button class="ob_btn"><%=world_enemy%></button>
+							<%end%>
+							<%@world_items.each do | world_items |%>
+								<button class="ob_btn"><%=world_items%></button>
+							<%end%>
+							<%@bros_bosses.each do | boss |%>
+								<button class="ob_btn"><%=boss%></button>
+							<%end%>
+							<button class="ob_btn"><%=@bros_boomboom%></button>
+						</div>
+						<div class="object_btn">
+							<%@brosU_enemys.each do | brosU_enemy |%>
+								<button class="ob_btn"><%=brosU_enemy%></button>
+							<%end%>
+							<%@brosU_items.each do | brosU_items |%>
+								<button class="ob_btn"><%=brosU_items%></button>
+							<%end%>
+							<%@bros_bosses.each do | boss |%>
+								<button class="ob_btn"><%=boss%></button>
+							<%end%>
+							<button class="ob_btn"><%=@bros_boomboom%></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- エディット画面 -->
+			<div class="piano">
+				<div class="window">
+					<div class="piano_box" style="overflow:auto;">
+						<!-- マス目の表示範囲 -->
+						<table class="piano_table">
+							<%for i in 1..25 do%>
+									<!-- 1行目に小節番号を表示 -->
+									<%if i == 1%>
+											<tr>
+												<%for num in 0..415 do%>
+														<%if num == 0 && i == 1 || num % 16 == 0%>
+															<%am = num / 16 + 1%>
+															<%if am <= 13%>
+																<th><%=am%></th>
+															<%else%>
+																<%am -= 13%>
+																<th><%=am%></th>
+															<%end%>
+														<%else%>
+															<th></th>
+														<%end%>
+												<%end%>
+											</tr>
+									<%end%>
+									<%measure = 0%>
+									<!-- 11行目にボーダーラインを表示 -->
+									<%if i != 11%>
+											<tr>
+												<%for num in 1..416 do%>
+														<%if num == 1 && i == 1 || num % 16 == 0%>
+															<%measure += 1%>
+															<!-- 小節の変わり目のマスにIDを付与 -->
+															<%if num == 1%>
+																<td class="play<%= num%> r<%= i%>" id="measure<%= measure%>"></td>
+															<%else%>
+																<td class="play<%= num%> r<%= i%>" id="measure<%= measure%>" style="border-right: 4px solid;"></td>
+															<%end%>
+														<%elsif num % 4 != 0%>
+															<td class="play<%= num%> r<%= i%>"></td>
+														<%else%>
+															<td class="play<%= num%> r<%= i%>" style="border-right: 3px solid;"></td>
+														<%end%>
+												<%end%>
+											</tr>
+									<%else%>
+											<tr style="border-bottom: 4px solid">
+												<%for num in 1..416 do%>
+														<%if num % 16 == 0%>
+															<td class="play<%= num%> r<%= i%>" style="border-right: 4px solid;"></td>
+														<%elsif num % 4 != 0%>
+															<td class="play<%= num%> r<%= i%>"></td>
+														<%else%>
+															<td class="play<%= num%> r<%= i%>" style="border-right: 3px solid;"></td>
+														<%end%>
+												<%end%>
+											</tr>
+									<%end%>
+							<%end%>
+						</table>
+					</div>
+					<!-- ピアノ画像 -->
+					<img src="/piano.png" id="piano">
+					<!-- ピアノ画像クリックで音が鳴る半透明なボタン -->
+					<%for num in 1..25%>
+					<button class="n<%= num%> nbt"><%=num%></button>
+					<%end%>
+				</div>
+				<div class="opsions sidebar on">
+					<h3>変換前BPM</h3>
+					<input type="number" id="bpm" placeholder="原曲のBPMを入力">
+					<button class="trans">変換</button>
+					<h3>演奏BPM</h3>
+					<input type="text" id="afterbpm">
+					<h3>スクロール手段</h3>
+					<input type="text" id="transportation">
+					<br>
+					<div class="sidebuttons">
+						<h3>ゲームスキン</h3>
+						<div class="gameskin"><button class="bros buttons2">スーパーマリオブラザーズ</button></div>
+						<div class="gameskin"><button class="bros3 buttons2">スーパーマリオブラザーズ3</button></div>
+						<div class="gameskin"><button class="world buttons2">スーパーマリオワールド</button></div>
+						<div class="gameskin"><button class="brosU buttons2">New スーパーマリオブラザーズ U</button></div>
+						<p></p>
+						<button class="erase buttons1">消す</button>
+						<button class="allerase buttons1">全消し</button>
+						<button id="playback" class="buttons1">再生</button>
+					</div>
+				</div>
+				<div class="edit_table1 sidebar on">
+					<span class="measures">
+						<h3>小節</h3>
+					</span>
+					<table>
+						<tr>
+							<td class="surface" style="border-color:black;">1</td>
+							<td id="ameasure1">1</td>
+							<td id="ameasure2">2</td>
+							<td id="ameasure3">3</td>
+							<td id="ameasure4">4</td>
+							<td id="ameasure5">5</td>
+							<td id="ameasure6">6</td>
+							<td id="ameasure7">7</td>
+							<td id="ameasure8">8</td>
+							<td id="ameasure9">9</td>
+							<td id="ameasure10">10</td>
+							<td id="ameasure11">11</td>
+							<td id="ameasure12">12</td>
+							<td id="ameasure13">13</td>
+						</tr>
+						<tr>
+							<td class="surface" style="border-color:black;">2</td>
+							<td id="ameasure14">1</td>
+							<td id="ameasure15">2</td>
+							<td id="ameasure16">3</td>
+							<td id="ameasure17">4</td>
+							<td id="ameasure18">5</td>
+							<td id="ameasure19">6</td>
+							<td id="ameasure20">7</td>
+							<td id="ameasure21">8</td>
+							<td id="ameasure22">9</td>
+							<td id="ameasure23">10</td>
+							<td id="ameasure24">11</td>
+							<td id="ameasure25">12</td>
+							<td id="ameasure26">13</td>
+						</tr>
+					</table>
+					<h3>選択中のパーツ</h3>
+					<span id="select_p"></span>
+					<h3>対応楽器</h3>
+					<span id="select_m"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="block"></div>
 </body>
-</html>
 
+</html>
