@@ -320,7 +320,6 @@ $(document).ready(function() {
 	let counta = 1;
 	//和音を再生
 	function playchord(num) {
-		if ($("#playback").text() == "停止") {
 			let row = $(".play_" + num).closest("tr").index();
 			row += 1;
 			let text = $(".play_" + num).text();
@@ -339,7 +338,6 @@ $(document).ready(function() {
 			setTimeout(play_back, note * (num - 1), row3, text3);
 			setTimeout(play_back, note * (num - 1), row4, text4);
 			counta += 1;
-		}
 
 	}
 	//左から順番に再生
@@ -410,16 +408,6 @@ $(document).ready(function() {
 					return instruments[num].name;
 				}
 			}
-		}
-	}
-	//再生スクロール
-	function movescroll(s) {
-		if ($("#playback").text() == "停止") {
-			$(".piano_box").animate({
-				scrollLeft: measures[s]
-			}, {
-				queue: false
-			});
 		}
 	}
 	//サイドボタン
